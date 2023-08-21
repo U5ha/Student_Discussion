@@ -1,0 +1,125 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous')
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css' integrity='sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n' crossorigin='anonymous')
+    link(rel='stylesheet' href='../static/style.css')
+    style 
+        include ../static/style.css
+    title Boot Website
+  body
+    a.chat-bot.btn.btn-light.mt-3(href='/index.html')
+      i.bi.bi-chat
+      |  ChatBot
+    // navbar
+    nav.navbar.navbar-expand-lg.bg-dark.navbar-dark.py-2.fixed-top
+      .container
+        a.navbar-brand(href='#') Home
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navmenu')
+          span.navbar-toggler-icon
+        #navmenu.collapse.navbar-collapse
+          ul.navbar-nav.ms-auto
+            li.nav-item.px-3
+              a.nav-link(href='#learn') About
+            li.nav-item.px-3
+              a.nav-link(href='/contact') Contact Us
+            li.nav-item.px-3
+              a.nav-link(href='/signup') Sign Up
+            li.nav-item.px-3
+              a.nav-link(href='/login') Login
+    // showcase
+    section.bg-dark.text-light.p-2.p-lg-0.pt-lg-4.text-center.text-sm-start
+      .container
+        .d-sm-flex.align-items-center.justify-content-between
+          div
+            h1
+              | Welcome to 
+              span.text-warning Subject Discussion Forum
+            p.lead.my-4
+              | Get your doubts clarified, get one-to-one interaction with faculties, post your doubts and get the best solutions from the wide variety of answers.
+            button.btn.btn-primary.btn-lg.my-4(data-bs-toggle='modal' data-bs-target='enroll' ) 
+                a.nav-link(href='/login') Ask Your Doubt 
+          img.img-fluid.d-none.d-sm-block.mx-5(src='https://www.gvpce.ac.in/gvp/images/logo.jpg' alt='logo' width='150px' height='150px')
+    // Learn Sections
+    section#learn.p-5
+      .container
+        .row.align-items-center.justify-content-between
+          .col-md
+            img.img-fluid(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpk3_1Z970w_sR3laxXSb_hKUtoHorU4O1nDfF3t1LwRoGyjPUnpT3j1b7x8xNjiLweR4&usqp=CAU' alt='1-1 discuss' width='800px' height='950px')
+          .col-md.p-5
+            h2 1-1 Discussion with Faculty/Faculties
+            p.lead
+              | The students can now interact with the faculties of the college one-to-one and can get their doubts resolved (or) clarified.
+            p.p-5
+              | Interact with any faculty of your choice have expertise in your problem occuring domain. Interact with your own class faculties or with the other section faculties or any other faculties with whom the student is comfortable with.
+            a.btn.btn-light.mt-3(href='#')
+              i.bi.bi-chevron-right
+              | Read More
+    section#learn.p-5.bg-dark.text-light
+      .container
+        .row.align-items-center.justify-content-between
+          .col-md.p-5
+            h2 Discussion with CLASS
+            p.lead
+              | Students can post their doubts (or) queries in the section or the branch disccussion room and can discuss about the problems and their various solutions.
+            p.p-5
+              | Students can freely express their views or opinions in the disccussion room of the section or the branch, they can also comment or provide answers to other queries posted by their fellow classmate (or) batchmate.
+            a.btn.btn-light.mt-3(href='#')
+              i.bi.bi-chevron-right
+              | Read More
+          .col-md
+            img.img-fluid(src='https://thumbs.dreamstime.com/b/people-icon-flat-style-dialogue-four-men-women-talking-discussion-business-suits-vector-illustration-146863903.jpg' alt='class-discuss')
+    // contact & map
+    section.p-5
+      .container
+        .row.g-4
+          .col-md
+            h2.text-center.mb-4 Contact Info
+            ul.list-group.list-group-flush.lead
+              li.list-group-item
+                span.fw-bold Main Location:
+                |   50 Main st Boston MA
+              li.list-group-item
+                span.fw-bold Enrollment Phone:
+                |   555-55555
+              li.list-group-item
+                span.fw-bold Student Phone:
+                |   9847235957
+              li.list-group-item
+                span.fw-bold Enrollment Email:
+                |   enrol@gmail.com
+    // footer
+    footer.p-3.bg-dark.text-white.text-center.position-relative
+      .container
+        p.lead Copyright © Boot Website
+        a.position-absolute.bottom-0.end-0.p-3(href='#')
+          i.bi.bi-arrow-up-circle.h4 Scroll Up
+    // Modal
+    #enroll.modal.fade(tabindex='-1' aria-labelledby='enrollLabel' aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h5#enrollLabel.modal-title Modal title
+            button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+          .modal-body
+            p.lead Fill Out This Form And We Will Get Back To You
+            form
+              .mb-3
+                label.col-form-label(for='first-name') First Name:
+                input#first-name.form-control(type='text')
+              .mb-3
+                label.col-form-label(for='Last-name') Last Name:
+                input#Last-name.form-control(type='text')
+              .mb-3
+                label.col-form-label(for='email') Email:
+                input#email.form-control(type='email')
+              .mb-3
+                label.col-form-label(for='phone') Phone:
+                input#Phone.form-control(type='tel')
+          .modal-footer
+            button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+            button.btn.btn-primary(type='button') Submit
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8' crossorigin='anonymous')
