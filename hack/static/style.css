@@ -1,0 +1,19 @@
+body::before{
+    display:block;
+    content: '';
+    height: 50px;
+}
+
+@media(min-width:768px){
+    .news-input{
+        width: 50%;
+    }
+}
+
+.chat-bot {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    background-color: rgb(170, 213, 213);
+}
+
